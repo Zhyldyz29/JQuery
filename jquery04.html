@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+    <style>
+      .mondiv {
+        width: 400p;
+        height: 200px;
+        border: 1px solid black;
+      }
+      .efface {
+        display: none;
+      }
+      #profil {
+        float: right;
+      }
+      .vignettes {
+        float: right;
+        margin: 20px;
+        background-color: brown;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <button>GO</button>
+
+    <button>ajoute</button>
+    <section>
+      <div class="c1" id="id1">JO</div>
+      <div class="c1" id="id2"><span>Paul  </span></div>
+      <div class="c1" id="id3">Jacques</div>
+    </section>
+    <script>
+      $(document).ready(function () {
+        $("section").on("click", ".c1", function () {
+          // ajoute un attribut
+          console.log(
+            "execute un function qui va chercher les infos sur" +
+              $(this).attr("id")
+          );
+          let retour = {
+            nom: "JO",
+            prenom: "Lagadec",
+            role: "admin",
+            photo: "jo png",
+          };
+          $("#profil").html(`<h1> ${retour.nom} ${retour.prenom}</h1>`);
+        });
+        let i = 3;
+        $("button").click(function () {
+          i++;
+          $("section").append(`<div class="c1" id="id${i}"> du texte 4 </div>`);
+        });
+
+        $(".c1").has("span").css("color","red")
+      });
+    </script>
+  </body>
+</html>

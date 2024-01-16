@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+
+    <style>
+      .mondiv {
+        width: 400p;
+        height: 200px;
+        border: 1px solid black;
+      }
+      .efface {
+        display: none;
+      }
+
+      .vignettes {
+        float:right;margin:20px;background-color: brown;color:white;
+      }
+    </style>
+  </head>
+  <body>
+<button>OK</button>
+    <div>
+        <img id = "im1" />
+        
+        <a>google.fr</a>
+    </div>
+
+    <div class="vignettes" id="div1">im1</div>
+    <div class="vignettes" id="div2">im2</div>
+    
+    <script>
+      $(document).ready(function(){
+
+        $("button").click(function(){
+            // ajoute un attribut src dans la balise img
+           $("a").attr("href","http://www.google.fr")
+        })
+
+        $("#div1").mouseover(function(){
+          $("#im1").attr("src","jqueryphoto.png")
+        })
+
+      })
+    </script>
+  </body>
+</html>
